@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon/Days-In-Arabic.jpg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <title>Matching Days</title>
+  </head>
+  <body id="matching_days"></body>
+  <script src="js/matching_days.js" charset="utf-8"></script>
+  <script src="js/matching_days_DOM.js" charset="utf-8"></script>
+  <script type="text/x-template" id="matching_days_template">
+    <p class="instructions">Please select a date of your choice to find out which day of the week it falls on. The day for the first date will be RED and the day for the second date will be ORANGE. If the two days fall on the same day of the week then the day will be GREEN.</p>
+
+    {{#each day}}
+    <div class="day" id={{this}}>{{this}}</div>
+    {{/each}}
+
+    {{#each date}}
+
+    <div class={{@key}}>
+      <label for={{@key}}>{{this}}</label>
+      <input type="date" id={{@key}} name={{@key}} />
+    </div>
+    {{/each}}
+  </script>
+</html>
